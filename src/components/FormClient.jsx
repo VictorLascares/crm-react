@@ -25,22 +25,32 @@ const FormClient = ({client}) => {
 
     const handleSubmit = async (values) => {
         try {
-            const url = 'http://localhost:4000/clients'
-            const response = await fetch(url, {
-                method: 'POST',
-                body: JSON.stringify(values),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            const result = await response.json();
+            if (Object.keys(client).length > 0) {
+                const url = `http://localhost:4000/clients/${client.id}`
+                await fetch(url, {
+                    method: 'PUT',
+                    body: JSON.stringify(values),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+            } else {
+                const url = 'http://localhost:4000/clients'
+                await fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify(values),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+            }
         } catch (error) {
             console.log(error);
         }
     }
     return (
         <div className='bg-white mt-10 px-5 py-10 rounded-md shadow-md md:w-3/4 mx-auto'>
-            <h2 className='text-gray-600 font-bold text-xl uppercase text-center'>Agregar Clientes</h2>
+            <h2 className='text-gray-600 font-bold text-xl uppercase text-center'>{Object.keys(client).length > 0 ? 'Editar cliente': 'Agregar cliente'}</h2>
             <Formik
                 initialValues={{
                     name: client?.name ?? '',
@@ -52,7 +62,7 @@ const FormClient = ({client}) => {
                 enableReinitialize={true}
                 onSubmit={ async(values, {resetForm}) => { 
                     await handleSubmit(values) 
-                    resetForm()
+                    // resetForm()
                     navigate('/clients')
                 }}
                 validationSchema={newClientSchema}

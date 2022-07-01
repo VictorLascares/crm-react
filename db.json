@@ -3,7 +3,7 @@
     {
       "name": "Victor Láscares",
       "business": "Amazon",
-      "email": "victorlascares@amazon.com",
+      "email": "vlascares@amazon.com",
       "phone": "9613751407",
       "notes": "",
       "id": 1
@@ -39,6 +39,14 @@
       "phone": "9612988290",
       "notes": "",
       "id": 5
+    },
+    {
+      "name": "Ramiro Estrada",
+      "business": "YouTube",
+      "email": "restrada@youtube.com",
+      "phone": "9172121922",
+      "notes": "",
+      "id": 6
     }
   ]
 }
