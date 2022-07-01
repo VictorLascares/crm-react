@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import Client from "../components/Client"
 
 const Index = () => {
     const [clients, setClients] = useState([])
@@ -9,7 +10,6 @@ const Index = () => {
             const response = await fetch(url);
             const result = await response.json();
             setClients(result);
-            
         } catch (error) {
             console.log(error);
         }
@@ -22,9 +22,32 @@ const Index = () => {
 
 
     return (
-        <div>
-            <h1>Inicio</h1>
-        </div>
+        <>
+            <h1 className='font-black text-4xl text-purple-900'>Clientes</h1>
+            <p className='mt-3 text-gray-500'>Administra tus clientes</p>
+
+            <table className="w-full mt-5 table-auto shadow bg-white">
+                <thead className="bg-purple-900 text-white">
+                    <tr>
+                        <th className="p-2">Nombre</th>
+                        <th className="p-2">Contacto</th>
+                        <th className="p-2">Empresa</th>
+                        <th className="p-2">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        clients.map( (client, index) => (
+                            <Client
+                                last={index === clients.length-1} 
+                                key={client.id}
+                                client={client}
+                            />
+                        ))
+                    }
+                </tbody>
+            </table>
+        </>
     )
 }
 
