@@ -7,6 +7,30 @@
       "phone": "9613751407",
       "notes": "",
       "id": 1
+    },
+    {
+      "name": "Jhonny Culebro",
+      "business": "Twitch",
+      "email": "jhonnycl@twitch.com",
+      "phone": "9817272210",
+      "notes": "",
+      "id": 2
+    },
+    {
+      "name": "Guadalupe Lascares",
+      "business": "Google Inc",
+      "email": "guadalupelascares@google.com",
+      "phone": "9612555626",
+      "notes": "",
+      "id": 3
+    },
+    {
+      "name": "Alberto Culebro",
+      "business": "SMAPA",
+      "email": "albculebro@smapa.com",
+      "phone": "9188282011",
+      "notes": "",
+      "id": 4
     }
   ]
 }
