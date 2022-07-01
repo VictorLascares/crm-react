@@ -25,6 +25,7 @@ const Show = () => {
     
 
     return (
+        Object.keys(client).length === 0 ? <p className="text-center text-gray-700 uppercase text-4xl">No hay resultados</p> : (
         <div>
             {charging ? 'cargando...': (
                 <>
@@ -56,6 +57,7 @@ const Show = () => {
                 </>
             )}
         </div>
+        )
     )
 }
 
