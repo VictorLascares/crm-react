@@ -5,7 +5,7 @@ const Layout = () => {
     const currentUrl = location.pathname;
 
     return (
-        <div className="md:flex md:min-h-screen bg-gray-100">
+        <div className="md:flex md:min-h-screen">
             <div className="md:w-1/4 md:bg-gradient-to-b bg-purple-900 px-5 py-1">
                 <h2 className="text-center text-4xl text-white font-bold mt-4">CRM - Clientes</h2>
                 <nav className="mt-10 pb-5 md:pb-0 flex md:flex-col justify-center md:items-start items-center gap-4">

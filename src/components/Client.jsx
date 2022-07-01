@@ -1,7 +1,8 @@
-import React from 'react'
+import { useNavigate } from "react-router-dom";
 
 const Client = ({client, last}) => {
     const { name, email, business, phone, notes, id } = client;
+    const navigate = useNavigate();
     return (
         <tr className={`${!last ? 'border-b border-gray-400': ''} hover:bg-gray-50`}>
             <td className='p-3'>{name}</td>
@@ -15,6 +16,7 @@ const Client = ({client, last}) => {
                     <button
                         type='button'
                         className='p-2 rounded-md bg-yellow-400 hover:bg-yellow-500 text-white'
+                        onClick={() => navigate(`/clients/${id}`)}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />

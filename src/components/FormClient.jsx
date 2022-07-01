@@ -13,7 +13,6 @@ const FormClient = () => {
             .max(35, 'El nombre es muy largo')
             .required('El nombre  del cliente es obligatorio'),
         business: Yup.string()
-            .typeError('Nombre de empresa no válido')
             .required('El nombre de la empresa es obligatorio'),
         email: Yup.string()
             .email('Email no válido')
