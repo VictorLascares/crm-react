@@ -1,8 +1,12 @@
 {
   "clients": [
     {
-        "id": 1,
-        "name": "Victor"
+      "name": "Victor Láscares",
+      "business": "Amazon",
+      "email": "victorlascares@amazon.com",
+      "phone": "9613751407",
+      "notes": "",
+      "id": 1
     }
   ]
 }
