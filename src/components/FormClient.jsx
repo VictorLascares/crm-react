@@ -26,7 +26,7 @@ const FormClient = ({client}) => {
     const handleSubmit = async (values) => {
         try {
             if (Object.keys(client).length > 0) {
-                const url = `http://localhost:4000/clients/${client.id}`
+                const url = `${import.meta.env.VITE_API_URL}/${client.id}`
                 await fetch(url, {
                     method: 'PUT',
                     body: JSON.stringify(values),
@@ -35,7 +35,7 @@ const FormClient = ({client}) => {
                     }
                 })
             } else {
-                const url = 'http://localhost:4000/clients'
+                const url = import.meta.env.VITE_API_URL
                 await fetch(url, {
                     method: 'POST',
                     body: JSON.stringify(values),
