@@ -18,6 +18,22 @@ const Index = () => {
     useEffect(() => {
         getClients()
     }, [])
+
+    const handleEliminar = async id => {
+        const confirmed = confirm('¿Desea eliminar el cliente?');
+        if (confirmed) {
+            try {
+                const url = `http://localhost:4000/clients/${id}`;
+                await fetch(url, {
+                    method: 'DELETE',
+                })
+                const clientsArray = clients.filter(client => client.id !== id);
+                setClients(clientsArray)
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    }
     
 
 
@@ -43,6 +59,7 @@ const Index = () => {
                                     last={index === clients.length-1} 
                                     key={client.id}
                                     client={client}
+                                    handleEliminar={handleEliminar}
                                 />
                             ))
                         }
