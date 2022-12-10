@@ -1,12 +1,26 @@
+import { useActionData } from "react-router-dom";
 import FormClient from "../components/FormClient";
+import Error from "../components/Error";
 
 export async function action({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
-  console.log(data);
+
+  // Validacion
+  const errors = [];
+  if (Object.values(data).includes("")) {
+    errors.push("Todos los campos son obligatorios");
+  }
+
+  if (Object.keys(errors).length) {
+    return errors;
+  }
 }
 
 const Create = () => {
+  const errors = useActionData();
+
+  console.log(errors);
   return (
     <>
       <h1 className="font-black text-4xl text-purple-900">Nuevo Cliente</h1>
@@ -14,7 +28,16 @@ const Create = () => {
         Llena los siguientes campos para registrar a un cliente
       </p>
 
-      <FormClient />
+      <div className="bg-white mt-10 px-5 py-10 rounded-md shadow-md md:w-3/4 mx-auto">
+        {errors?.length &&
+          errors.map((error, i) => <Error key={i}>{error}</Error>)}
+        <h2 className="text-gray-600 font-bold text-xl uppercase text-center">
+          {/* {Object.keys(client).length > 0
+            ? "Editar cliente"
+            : "Agregar cliente"} */}
+        </h2>
+        <FormClient />
+      </div>
     </>
   );
 };
