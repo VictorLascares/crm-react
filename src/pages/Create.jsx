@@ -1,5 +1,8 @@
-import React from 'react'
 import FormClient from '../components/FormClient'
+
+export function action() {
+  console.log("Submit al formulario");
+}
 
 const Create = () => {
     return (

@@ -4,7 +4,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Index, { loader as clientsLoader } from "./pages/Index";
-import Create from "./pages/Create";
+import Create, { action as newClientAction} from "./pages/Create";
 import Edit from "./pages/Edit";
 
 const router = createBrowserRouter([
@@ -20,6 +20,7 @@ const router = createBrowserRouter([
       {
         path: "/clients/new",
         element: <Create />,
+        action: newClientAction,
       },
       {
         path: "/clients/edit/:id",
