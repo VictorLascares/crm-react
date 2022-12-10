@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react"
 import Client from "../components/Client"
 
+export function loader() {
+  return "Desde loader"
+}
+
 const Index = () => {
     const [clients, setClients] = useState([])
 
