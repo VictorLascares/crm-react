@@ -39,4 +39,14 @@ async function updateClient(id, values) {
   }
 }
 
-export { getClients, addClient, getClient, updateClient };
+async function removeClient(id) {
+  try {
+    await fetch(`${import.meta.env.VITE_API_URL}/${id}`, {
+      method: "delete",
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export { getClients, addClient, getClient, updateClient, removeClient };

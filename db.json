@@ -1,28 +1,12 @@
 {
   "clients": [
     {
-      "name": "Victor Láscares",
-      "business": "Google Inc.",
-      "email": "victor@correo.com",
-      "phone": "1234567456",
-      "notes": "hola",
-      "id": "1"
-    },
-    {
       "name": "Manuel Gallardo",
-      "business": "Facebook Inc.",
+      "business": "Google Inc.",
       "email": "manuel@correo.com",
-      "phone": "1231312",
-      "notes": "asdadas",
-      "id": "OdDfs5R"
-    },
-    {
-      "name": "Jhonny Culebro",
-      "business": "YouTube",
-      "email": "jhonny@correo.com",
-      "phone": "1312312",
-      "notes": "asdasd",
-      "id": "K8gm46Q"
+      "phone": "1234567456",
+      "notes": "noatas",
+      "id": 1
     }
   ]
 }
