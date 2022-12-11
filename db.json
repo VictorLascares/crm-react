@@ -1,11 +1,12 @@
 {
   "clients": [
     {
-      "id": "1",
       "name": "Victor Láscares",
+      "business": "Google Inc.",
       "email": "victor@correo.com",
-      "phone": "1234567890",
-      "business": "Google Inc."
+      "phone": "1234567456",
+      "notes": "hola",
+      "id": "1"
     },
     {
       "name": "Manuel Gallardo",

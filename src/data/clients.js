@@ -25,4 +25,18 @@ async function getClient(id) {
   return result;
 }
 
-export { getClients, addClient, getClient };
+async function updateClient(id, values) {
+  try {
+    await fetch(`${import.meta.env.VITE_API_URL}/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(values),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export { getClients, addClient, getClient, updateClient };
