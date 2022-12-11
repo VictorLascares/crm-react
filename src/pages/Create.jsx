@@ -6,10 +6,20 @@ export async function action({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
 
+  const { email } = data;
+
   // Validacion
   const errors = [];
   if (Object.values(data).includes("")) {
     errors.push("Todos los campos son obligatorios");
+  }
+
+  let regex = new RegExp(
+    "([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|[[\t -Z^-~]*])"
+  );
+
+  if (!regex.test(email)) {
+    errors.push("El correo no es válido");
   }
 
   if (Object.keys(errors).length) {
