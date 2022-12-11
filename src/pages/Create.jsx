@@ -30,7 +30,6 @@ export async function action({ request }) {
 const Create = () => {
   const errors = useActionData();
 
-  console.log(errors);
   return (
     <>
       <h1 className="font-black text-4xl text-purple-900">Nuevo Cliente</h1>

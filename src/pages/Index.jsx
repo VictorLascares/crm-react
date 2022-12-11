@@ -1,38 +1,14 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { getClients } from "../data/clients";
 import Client from "../components/Client";
 
 export async function loader() {
-  try {
-    const url = import.meta.env.VITE_API_URL;
-    const response = await fetch(url);
-    const result = await response.json();
-    console.log(result);
-    return result;
-  } catch (error) {
-    console.log(error);
-  }
-  return [];
+  const clients = getClients();  
+  return clients;
 }
 
 const Index = () => {
-  // const [clients, setClients] = useState([]);
-
-  // const getClients = async () => {
-  //   try {
-  //     const url = import.meta.env.VITE_API_URL;
-  //     const response = await fetch(url);
-  //     const result = await response.json();
-  //     setClients(result);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getClients();
-  // }, []);
-
   const clients = useLoaderData();
 
   const handleEliminar = async (id) => {
