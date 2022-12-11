@@ -1,35 +1,9 @@
 import React from "react";
 import { useNavigate, Form } from "react-router-dom";
-import Error from "./Error";
 
 const FormClient = ({ client }) => {
   const navigate = useNavigate();
 
-  const handleSubmit = async (values) => {
-    try {
-      if (Object.keys(client).length > 0) {
-        const url = `${import.meta.env.VITE_API_URL}/${client.id}`;
-        await fetch(url, {
-          method: "PUT",
-          body: JSON.stringify(values),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-      } else {
-        const url = import.meta.env.VITE_API_URL;
-        await fetch(url, {
-          method: "POST",
-          body: JSON.stringify(values),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
   return (
     <Form method="post" className="mt-10" noValidate>
       <div className="mb-4">

@@ -1,4 +1,5 @@
-import { useActionData } from "react-router-dom";
+import { redirect, useActionData } from "react-router-dom";
+import { addClient } from "../data/clients";
 import FormClient from "../components/FormClient";
 import Error from "../components/Error";
 
@@ -25,6 +26,10 @@ export async function action({ request }) {
   if (Object.keys(errors).length) {
     return errors;
   }
+
+  await addClient(data);
+
+  return redirect("/");
 }
 
 const Create = () => {
