@@ -14,6 +14,7 @@ const FormClient = ({ client }) => {
           className="mt-2 block w-full p-3 bg-gray-50 focus:outline-none"
           placeholder="Nombre del Cliente"
           name="name"
+          defaultValue={client?.name}
         />
       </div>
       <div className="mb-4">
@@ -26,6 +27,7 @@ const FormClient = ({ client }) => {
           className="mt-2 block w-full p-3 bg-gray-50 focus:outline-none"
           placeholder="Empresa del Cliente"
           name="business"
+          defaultValue={client?.business}
         />
       </div>
 
@@ -39,6 +41,7 @@ const FormClient = ({ client }) => {
           className="mt-2 block w-full p-3 bg-gray-50 focus:outline-none"
           placeholder="Correo Eléctronico del Cliente"
           name="email"
+          defaultValue={client?.email}
         />
       </div>
 
@@ -52,6 +55,7 @@ const FormClient = ({ client }) => {
           className="mt-2 block w-full p-3 bg-gray-50 focus:outline-none"
           placeholder="Teléfono del Cliente"
           name="phone"
+          defaultValue={client?.phone}
         />
       </div>
 
@@ -66,6 +70,7 @@ const FormClient = ({ client }) => {
           className="mt-2 block w-full p-3 bg-gray-50 h-40 align-self focus:outline-none resize-none"
           placeholder="Notas del Cliente"
           name="notes"
+          defaultValue={client?.notes}
         />
       </div>
 

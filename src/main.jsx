@@ -23,6 +23,7 @@ const router = createBrowserRouter([
         path: "/clients/new",
         element: <Create />,
         action: newClientAction,
+        errorElement: <ErrorPage />
       },
       {
         path: "/clients/edit/:id",
