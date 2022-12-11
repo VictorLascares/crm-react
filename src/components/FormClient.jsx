@@ -1,8 +1,6 @@
-import React from "react";
-import { useNavigate, Form } from "react-router-dom";
+import { Form } from "react-router-dom";
 
 const FormClient = ({ client }) => {
-  const navigate = useNavigate();
 
   return (
     <Form method="post" className="mt-10" noValidate>

@@ -11,7 +11,9 @@ export default function ErrorPage() {
       <p className="text-center text-2xl text-red-500 uppercase font-bold">
         Ocurrio un error
       </p>
-      <p className="text-center text-red-500">{error.message}</p>
+      <p className="text-center text-red-500">
+        {error.statusText || error.message}
+      </p>
     </div>
   );
 }

@@ -1,11 +1,7 @@
 async function getClients() {
-  try {
-    const response = await fetch(import.meta.env.VITE_API_URL);
-    const result = await response.json();
-    return result;
-  } catch (error) {
-    console.log(error);
-  }
+  const response = await fetch(import.meta.env.VITE_API_URL);
+  const result = await response.json();
+  return result;
 }
 
 async function addClient(values) {
@@ -22,4 +18,11 @@ async function addClient(values) {
   }
 }
 
-export { getClients, addClient };
+async function getClient(id) {
+  const url = `${import.meta.env.VITE_API_URL}/${id}`;
+  const response = await fetch(url);
+  const result = await response.json();
+  return result;
+}
+
+export { getClients, addClient, getClient };
